@@ -1,4 +1,3 @@
-import { useMediaQuery } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import { useTheme } from "@mui/material/styles";
@@ -14,7 +13,6 @@ interface IProps {
 export const Navbar: React.FC<IProps> = ({ children }) => {
   const theme = useTheme();
   const { state, dispatch } = useContext(GlobalAppContext);
-  const isMobile = useMediaQuery<boolean>(theme.breakpoints.down("md"));
 
   useEffect(() => {
     console.log("state", state);
@@ -29,9 +27,27 @@ export const Navbar: React.FC<IProps> = ({ children }) => {
 
   return (
     <Box sx={{ display: "flex" }}>
-      <AppBar position="fixed" color="primary" elevation={0}>
+      <AppBar
+        position="fixed"
+        color={state.isDarkMode ? "transparent" : "primary"}
+        elevation={0}
+        sx={{
+          WebkitBackdropFilter: "blur(8px)",
+          backdropFilter: "blur(8px)",
+          ...(state.isDarkMode && {
+            borderBottom: `1px solid ${theme.palette.text.primary}`,
+          }),
+        }}
+      >
         <Toolbar sx={{ justifyContent: "space-between" }}>
-          <Typography color="textPrimary" sx={{ textTransform: "uppercase" }}>
+          <Typography
+            sx={{
+              textTransform: "uppercase",
+              color: "white",
+              fontWeight: "bold",
+            }}
+            variant="h5"
+          >
             Shopping List
           </Typography>
           {/* Toggle dark mode */}

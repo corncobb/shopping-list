@@ -1,7 +1,7 @@
 import { createTheme, ThemeProvider } from "@mui/material";
-import { SnackbarProvider } from "notistack";
 import React, { useReducer } from "react";
 import { useRoutes } from "react-router-dom";
+import { ConfirmationDialogProvider } from "src/components";
 import { routes } from "./routes";
 import { GlobalAppContext, initialState, reducer } from "./store";
 import { GlobalStylesComponent } from "./styles";
@@ -25,13 +25,13 @@ export const App = () => {
             main: "#4D81B7",
           },
           secondary: {
-            main: "#C6312E",
+            main: "#1871E8",
           },
 
-          // text: {
-          //   primary: '#172b4d',
-          //   secondary: '#6b778c'
-          // }
+          text: {
+            // primary: '#172b4d',
+            secondary: "#7D7A7A",
+          },
         },
         components: {
           MuiDrawer: {
@@ -45,6 +45,9 @@ export const App = () => {
             styleOverrides: {
               root: {
                 textTransform: "none",
+              },
+              text: {
+                color: state.isDarkMode ? "white" : "black",
               },
             },
             defaultProps: {
@@ -71,18 +74,12 @@ export const App = () => {
 
   return (
     <GlobalAppContext.Provider value={{ state, dispatch }}>
-      <SnackbarProvider
-        maxSnack={3}
-        anchorOrigin={{
-          vertical: "top",
-          horizontal: "center",
-        }}
-      >
-        <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
+        <ConfirmationDialogProvider>
           <GlobalStylesComponent />
           {routing}
-        </ThemeProvider>
-      </SnackbarProvider>
+        </ConfirmationDialogProvider>
+      </ThemeProvider>
     </GlobalAppContext.Provider>
   );
 };

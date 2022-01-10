@@ -5,3 +5,9 @@ export interface IShoppingListItem {
   quantity: string;
   isCompleted?: boolean;
 }
+
+export interface IShoppingListForm {
+  open: boolean;
+  type: "ADD" | "EDIT";
+  data?: IShoppingListItem;
+}

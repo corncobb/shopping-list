@@ -21,7 +21,7 @@ export const Typography = {
   },
   h5: {
     fontWeight: 500,
-    fontSize: 16,
+    fontSize: 18,
     letterSpacing: "-0.05px",
   },
   h6: {
