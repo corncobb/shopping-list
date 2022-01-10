@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import { useTheme } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { ActionTypes, GlobalAppContext } from "../../store";
 
 interface IProps {
@@ -13,10 +13,6 @@ interface IProps {
 export const Navbar: React.FC<IProps> = ({ children }) => {
   const theme = useTheme();
   const { state, dispatch } = useContext(GlobalAppContext);
-
-  useEffect(() => {
-    console.log("state", state);
-  }, [state]);
 
   const handleDarkModeChange = (payload: boolean) => {
     dispatch({

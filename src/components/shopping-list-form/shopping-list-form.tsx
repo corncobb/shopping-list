@@ -23,8 +23,6 @@ export const ShoppingListForm = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery<boolean>(theme.breakpoints.down("md"));
 
-  console.log("data!!!", state.shoppingListForm);
-
   const emptyFormData: IShoppingListItem = {
     name: "",
     description: "",
