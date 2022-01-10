@@ -33,6 +33,7 @@ export const Typography = {
     fontWeight: 500,
   },
   fontFamily: [
+    "Nunito",
     "-apple-system",
     "BlinkMacSystemFont",
     "'Segoe UI'",

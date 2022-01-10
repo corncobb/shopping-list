@@ -41,6 +41,8 @@ export const Navbar: React.FC<IProps> = ({ children }) => {
               textTransform: "uppercase",
               color: "white",
               fontWeight: "bold",
+              fontFamily: "Dosis",
+              letterSpacing: "0.25px",
             }}
             variant="h5"
           >

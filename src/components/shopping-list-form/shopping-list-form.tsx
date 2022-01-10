@@ -148,7 +148,11 @@ export const ShoppingListForm = () => {
             <Typography
               color="textPrimary"
               variant="h5"
-              sx={{ textTransform: "uppercase" }}
+              sx={{
+                textTransform: "uppercase",
+                fontFamily: "Dosis",
+                letterSpacing: "0.25px",
+              }}
             >
               Shopping List
             </Typography>

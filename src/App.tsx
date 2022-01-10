@@ -1,3 +1,5 @@
+import "@fontsource/dosis";
+import "@fontsource/nunito";
 import { createTheme, ThemeProvider } from "@mui/material";
 import React, { useReducer } from "react";
 import { useRoutes } from "react-router-dom";

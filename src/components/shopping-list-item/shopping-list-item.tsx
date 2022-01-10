@@ -131,7 +131,7 @@ export const ShoppingListItem: React.FC<IProps> = ({
               },
             }),
           }}
-          primary={name}
+          primary={`${quantity}x ${name}`}
           secondary={description}
         />
       </ListItemButton>
