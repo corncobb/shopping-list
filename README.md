@@ -4,9 +4,10 @@
 
 shopping-list uses React, TypeScript, and MUI.
 
-View a live demo [here](https://shopping-cart-app.camcobb.com/)!
+View a live demo [here](https://shopping-list-red-six.vercel.app/)!
 
-Features: 
+Features:
+
 - Add items
 - Remove items
 - Edit items
